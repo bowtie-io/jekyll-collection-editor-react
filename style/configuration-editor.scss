@@ -1,0 +1,62 @@
+.configuration-editor {
+    border-top: 1px solid #eee;
+    position: relative;
+    box-shadow: 4px 3px 6px #eee;
+    h5.title {margin-bottom: 20px;}
+}
+.configuration-editor:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 40%;
+    left: 0px;
+    bottom: 0px;
+    top: -1px;
+    border-top: 2px solid #fff;
+    height:4px;
+}
+
+.configuration-field {
+  div.inner-group {
+    margin: 0 0 20px 0
+  }
+}
+
+.configuration-field.text-input-configuration {
+  label {
+    display: block;
+  }
+}
+
+.datepicker__input {
+  box-shadow:none;
+  border: 1px solid #ccc;
+}
+.datepicker__input:focus {
+  box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  border-color: #66afe9;
+}
+
+.collectioneditor .configuration-field .alert {
+    position: absolute;
+    z-index: 10 !important;
+    bottom: -60px !important;
+    padding: 10px !important;
+    left: 0 !important;
+    width: 90%;
+  }
+
+.time-select > div > div {max-height:200px !important;left:inherit !important;top:inherit !important;}
+
+@media (max-width: 767px) {
+    .configuration-editor {
+        border-top: none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        h5.title {margin-bottom: 20px;}
+    }
+    .configuration-editor:after {
+        border-top: none;
+    }
+}
