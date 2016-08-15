@@ -118,7 +118,7 @@ class QuillEditor extends Component {
     ];
 
     return (
-      <ReactQuill theme="snow" value={{this.props.body}}>
+      <ReactQuill theme="snow" value={this.props.body}>
       <ReactQuill.Toolbar key="toolbar"
           ref="toolbar"
           items={ReactQuill.Toolbar.toolbarOptions} />
