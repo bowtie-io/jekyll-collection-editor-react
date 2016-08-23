@@ -7,6 +7,8 @@ import EditorManager from '../components/EditorManager'
 import Indicator from '../components/Indicator'
 import 'font-awesome/scss/font-awesome.scss'
 import '../style/app.scss'
+import "react-summernote/dist/react-summernote.css"
+
 
 
 class App extends Component {

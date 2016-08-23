@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { currentDocumentSelector } from '../selectors/documents'
 import { configurationEditorModeAvailableSelector } from '../selectors/editorMode'
 import DocumentConfigurationEditor from './DocumentConfigurationEditor.js'
-import QuillEditor from './QuillEditor.js'
+import SummernoteEditor from './SummernoteEditor.js'
 import { activateConfigurationEditor, duplicateDocument, resetDocument } from '../actions'
 import MarkdownPreview from './MarkdownPreview.js'
 
@@ -55,7 +55,7 @@ class BodyEditorContainer extends Component {
         <div className="row animated slideInRight content-mode">
           <div className="md-editor has-preview col-sm-8">
             <div className="editor-content">
-            <QuillEditor {...this.props} />
+            <SummernoteEditor {...this.props} />
             </div>
           </div>
 

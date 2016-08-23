@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { currentDocumentSelector } from '../selectors/documents'
 import DocumentConfigurationEditor from './DocumentConfigurationEditor.js'
+import SummernoteEditor from './SummernoteEditor.js'
 import DocumentBodyEditor from './DocumentBodyEditor.js'
 import { activateBodyEditor, duplicateDocument, resetDocument } from '../actions'
 import EditorContainerFooter from './EditorContainerFooter.js'
@@ -51,15 +52,15 @@ class BodyAndConfigurationEditorContainer extends Component {
 
         </div>
         <div className="row animated slideInLeft collection-mode">
-          <div className="configuration-editor col-lg-5 col-sm-7">
+          <div className="configuration-editor col-lg-5 col-sm-5">
             <div className="editor-content">
             <DocumentConfigurationEditor />
             </div>
           </div>
 
-          <div className="md-editor no-preview col-lg-7 col-sm-5">
+          <div className="md-editor no-preview col-lg-7 col-sm-7">
             <div className="editor-content">
-            <DocumentBodyEditor {...this.props} />
+            <SummernoteEditor {...this.props} />
             </div>
           </div>
         </div>
