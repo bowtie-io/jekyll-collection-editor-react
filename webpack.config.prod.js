@@ -10,17 +10,17 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static/'
   },
-  externals: {
-    'jquery': 'jQuery',
-
-  },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': { 'NODE_ENV': JSON.stringify('production') }
-    })
+    }),
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+        })
   ],
   resolve: {
     alias: {
@@ -48,7 +48,20 @@ module.exports = {
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
       { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
-      { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' }
+         {
+test: /\.(jpe?g|png|gif|svg)$/i,
+       loaders: [
+         'url?limit=2048&name=[name]-[sha1:hash:hex:10].[ext]', // Inline images if they're less than 2 KiB
+       //'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+       ]
+         },
+         {
+test: /\.(eot|svg|ttf|woff2?)(\?\w+)?$/i,
+       loaders: [
+         'file?name=[name]-[sha1:hash:hex:10].[ext]',
+       ]
+         },
+
     ]
   }
 }
