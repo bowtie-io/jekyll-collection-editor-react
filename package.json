@@ -48,7 +48,7 @@
     "react-redux": "^4.2.1",
     "react-router": "2.0.0-rc5",
     "react-router-redux": "^2.1.0",
-    "react-summernote": "^1.0.2",
+    "react-summernote": "git+ssh://git@github.com/igolden/react-summernote.git",
     "redux": "^3.2.1",
     "redux-debounced": "^0.1.1",
     "redux-logger": "^2.4.0",
