@@ -506,7 +506,33 @@ export function addUploadToDocument(document, file) {
     base64Reader.readAsDataURL(file)
   }
 }
+export function loadImage(document, file) {
+  return (dispatch, getState) => {
+    const base64Reader = new FileReader();
 
+    const promise = new Promise((resolve, reject)=> {
+      base64Reader.addEventListener('load', resolve)
+    })
+        .then(()=> {
+          const base64 = base64Reader.result.replace(/data:.*?base64,/, '')
+          const key = Math.random().toString(36).substring(7)
+          const destination_path = `/uploads/${document.name}/${key}-${file.name}`
+          dispatch({
+            type: DOCUMENT_ADD_UPLOAD,
+            payload: {
+              path: destination_path,
+              type: file.type,
+              base64: base64,
+              name: document.name,
+              previewURL: window.URL.createObjectURL(file),
+              //position: position
+            }
+          })
+        })
+    base64Reader.readAsDataURL(file);
+    return promise;
+   }
+}
 export const RESET_ALL = 'RESET_ALL'
 
 export function resetAll() {
