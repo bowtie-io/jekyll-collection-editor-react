@@ -307,9 +307,10 @@ function parseContent(name, content){
   content = window.decodeURIComponent(window.escape(window.atob(content.replace(/\s/g, ''))));
 
   const front = parseYamlFrontMatter(content)
-
+  let body = front.body.trim()
+  let embeddedImagesBody = body.replace(/<img[^>"']*((("[^"]*")|('[^']*'))[^"'>]*)*>/g,"<img src='http://placehold.it/500x500'>")
   return {
-    body: front.body.trim(),
+    body: embeddedImagesBody,
     configuration: front.attributes,
     uploads: []
   }

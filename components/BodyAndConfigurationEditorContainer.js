@@ -7,6 +7,7 @@ import DocumentBodyEditor from './DocumentBodyEditor.js'
 import { activateBodyEditor, duplicateDocument, resetDocument } from '../actions'
 import EditorContainerFooter from './EditorContainerFooter.js'
 
+
 class BodyAndConfigurationEditorContainer extends Component {
   render() {
     const { currentDocument } = this.props
