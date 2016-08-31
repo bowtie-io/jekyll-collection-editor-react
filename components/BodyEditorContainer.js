@@ -59,11 +59,6 @@ class BodyEditorContainer extends Component {
             </div>
           </div>
 
-          <div className="md-preview col-sm-4">
-            <div className="editor-content">
-            <MarkdownPreview />
-            </div>
-          </div>
         </div>
       </div>
     )

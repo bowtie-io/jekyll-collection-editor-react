@@ -5,7 +5,7 @@ import CodeMirror from 'codemirror'
 import Summernote from 'summernote'
 import ReactSummernote from "react-summernote"
 import { connect } from 'react-redux'
-import { updateDocumentBody, updateBodyEditorSelection, addUploadToDocument } from '../actions'
+import { loadImage, updateDocumentBody, updateBodyEditorSelection, addUploadToDocument } from '../actions'
 import { currentDocumentSelector } from '../selectors/documents'
 import DropArea from './DropArea'
 
@@ -26,6 +26,7 @@ class SummernoteEditor extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.syncBodyEditorState = this.syncBodyEditorState.bind(this)
     this.handleCursorActivity = this.handleCursorActivity.bind(this)
+    this.handleImageUpload = this.handleImageUpload.bind(this)
   }
 
   handleFocus(e) {
@@ -46,7 +47,6 @@ class SummernoteEditor extends Component {
     const { body }     = content
     var  editor        = this.refs.summer
     var newBody        = contents
-    console.log(contents);
 
 
     if(body != newBody){
@@ -78,6 +78,22 @@ class SummernoteEditor extends Component {
   handleDropZoneDeactivation(){
     this.setState({ dropZoneActivated: false })
   }
+  handleImageUpload (files, editor, welEditable){
+    var file = files[files.length -1];
+    this.props.loadImage(this.props.document, file).then(() => {
+    this.handleImageInsert()
+    })
+
+  }
+  handleImageInsert(uploads) {
+    var uploads = this.props.uploads
+    var image = uploads[uploads.length - 1]
+
+      ReactSummernote.insertImage(image.previewURL, $image => {
+          $image.css("width", Math.floor($image.width() / 2));
+          $image.attr("alt", image.name);
+          });
+  }
 
 
 
@@ -90,54 +106,58 @@ class SummernoteEditor extends Component {
   syncBodyEditorState(codeMirror=null) {
     codeMirror = codeMirror ? codeMirror : (this.state ? this.state.codeMirror : null)
 
-    if(codeMirror){
-      codeMirror.setValue(this.props.body || '')
-      codeMirror.focus()
+      if(codeMirror){
+        codeMirror.setValue(this.props.body || '')
+          codeMirror.focus()
 
-      codeMirror.setSelection(
-        this.props.bodyEditorSelection.anchor,
-        this.props.bodyEditorSelection.head)
-    }
+          codeMirror.setSelection(
+              this.props.bodyEditorSelection.anchor,
+              this.props.bodyEditorSelection.head)
+      }
   }
 
   render() {
     this.syncBodyEditorState()
-    this.state = this.state || {}
+      this.state = this.state || {}
     return (
-<ReactSummernote
-                value={this.props.body}
-                options={{
-                    height: 750,
-                    dialogsInBody: true,
-                    toolbar: [
-                        ["style", ["style"]],
-                        ["font", ["bold", "underline", "clear"]],
-                        ["fontname", ["fontname"]],
-                        ["para", ["ul", "ol", "paragraph"]],
-                        ["table", ["table"]],
-                        ["insert", ["link", "picture", "video"]],
-                        ["view", ["codeview"]]
-                    ]
-                }}
-                onChange={this.handleChange}
-            />
-    )
-  }
+        <ReactSummernote
+        value={this.props.body}
+        options={{
+height: 750,
+dialogsInBody: true,
+toolbar: [
+["style", ["style"]],
+["font", ["bold", "underline", "clear"]],
+["fontname", ["fontname"]],
+["para", ["ul", "ol", "paragraph"]],
+["table", ["table"]],
+["insert", ["link", "picture", "video"]],
+["view", ["codeview"]]
+]
+}}
+onImageUpload={this.handleImageUpload}
+onChange={this.handleChange}
+/>
+)
+    }
 }
 
 function mapStateToProperties(state) {
   const currentDocument = currentDocumentSelector(state).currentDocument
 
-  return {
-    document: currentDocument,
-    bodyEditorSelection: state.bodyEditorSelection,
-    body: currentDocument.content.body
-  }
+    return {
+document: currentDocument,
+            bodyEditorSelection: state.bodyEditorSelection,
+            body: currentDocument.content.body,
+            uploads: currentDocument.content.uploads
+    }
 }
 
 export default connect(mapStateToProperties, {
-  SummernoteEditor,
-  updateDocumentBody,
-  updateBodyEditorSelection,
-  addUploadToDocument,
-})(SummernoteEditor)
+    SummernoteEditor,
+    updateDocumentBody,
+    updateBodyEditorSelection,
+    addUploadToDocument,
+    loadImage
+    })(SummernoteEditor)
+
