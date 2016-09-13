@@ -4,7 +4,7 @@ import { currentDocumentSelector } from '../selectors/documents'
 import DocumentConfigurationEditor from './DocumentConfigurationEditor.js'
 import SummernoteEditor from './SummernoteEditor.js'
 import DocumentBodyEditor from './DocumentBodyEditor.js'
-import { activateBodyEditor, duplicateDocument, resetDocument } from '../actions'
+import { activateBodyEditor, resetDocument } from '../actions'
 import EditorContainerFooter from './EditorContainerFooter.js'
 
 
@@ -36,14 +36,13 @@ class BodyAndConfigurationEditorContainer extends Component {
             </button> : null }
 
 
-          <button onClick={this.props.duplicateDocument}>
-            <span style={{cursor: 'pointer', fontSize: '20px'}}
-              className="fa fa-files-o" />
-          </button>
 
-          <button onClick={this.props.activateBodyEditor}>
-            <span style={{cursor: 'pointer', fontSize: '20px'}}
+          <button className="viewButton" onClick={this.props.activateBodyEditor}>
+            <span style={{float: 'left', cursor: 'pointer', fontSize: '20px'}}
               className="fa fa-edit" />
+              <div className="viewButtonText">
+              Editor View
+              </div>
           </button>
           </div>
 
@@ -73,6 +72,5 @@ export default connect((state, props) => ({
   ...props
 }), {
   activateBodyEditor,
-  duplicateDocument,
   resetDocument
 })(BodyAndConfigurationEditorContainer)

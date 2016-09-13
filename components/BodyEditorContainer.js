@@ -4,7 +4,7 @@ import { currentDocumentSelector } from '../selectors/documents'
 import { configurationEditorModeAvailableSelector } from '../selectors/editorMode'
 import DocumentConfigurationEditor from './DocumentConfigurationEditor.js'
 import SummernoteEditor from './SummernoteEditor.js'
-import { activateConfigurationEditor, duplicateDocument, resetDocument } from '../actions'
+import { activateConfigurationEditor, resetDocument } from '../actions'
 import MarkdownPreview from './MarkdownPreview.js'
 
 class BodyEditorContainer extends Component {
@@ -35,15 +35,13 @@ class BodyEditorContainer extends Component {
                 className="fa fa-undo" />
             </button> : null }
 
-          <button onClick={this.props.duplicateDocument}>
-            <span style={{cursor: 'pointer', fontSize: '20px'}}
-              className="fa fa-files-o" />
-          </button>
 
           { configurationEditorModeAvailable ?
-            <button onClick={this.props.activateConfigurationEditor}>
-              <span style={{cursor: 'pointer', fontSize: '20px'}}
-                className="fa fa-list" />
+            <button onClick={this.props.activateConfigurationEditor} className="viewButton" style={{padding: '12px', borderRadius: '4px', background: '#ccc', width: "auto"}}>
+              <span style={{cursor: 'pointer', fontSize: '20px', float: 'left'}} className="fa fa-list" />
+              <div className="viewButtonText" style={{float: 'left', marginLeft: '6px'}}>
+              Fields View
+              </div>
             </button> : null }
             </div>
 
@@ -70,6 +68,5 @@ export default connect((state, props) => ({
   ...props
 }), {
   activateConfigurationEditor,
-  duplicateDocument,
   resetDocument
 })(BodyEditorContainer)
