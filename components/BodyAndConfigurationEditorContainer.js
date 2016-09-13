@@ -47,9 +47,7 @@ class BodyAndConfigurationEditorContainer extends Component {
           </button>
           </div>
 
-          <div className="row titles"><h5><span className="title fields-title col-lg-5 col-sm-7">Fields</span><span className="title col-lg-7 col-sm-5">Markdown<button className="fa fa-question-circle markdown-help"
-            data-toggle="modal" data-target="#mdHelp"></button></span></h5>
-          </div>
+          <div className="row titles"></div>
 
         </div>
         <div className="row animated slideInLeft collection-mode">

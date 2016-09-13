@@ -47,8 +47,7 @@ class BodyEditorContainer extends Component {
             </button> : null }
             </div>
 
-            <div className="row titles"><h5><span className="title col-xs-6">Markdown<button className="fa fa-question-circle markdown-help"
-              data-toggle="modal" data-target="#mdHelp"></button></span><span className="title preview-title col-xs-6">Preview</span></h5></div>
+            <div className="row titles"></div>
 
         </div>
 
