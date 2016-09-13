@@ -34,7 +34,7 @@ class Loading extends Component {
   }
 }
 
-export default class FileUploadConfiguration extends Component {
+export class FileUploadConfiguration extends Component {
   componentWillMount() {
     if(this.props.value && !this.props.file){
       this.props.loadFile(this.props.value)
