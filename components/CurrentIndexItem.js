@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { updateDocumentName, removeDocument } from '../actions'
+import { updateDocumentName, removeDocument, duplicateDocument } from '../actions'
 import AutosizeTextArea from 'react-autosize-textarea'
 
 class CurrentIndexItem extends Component {
@@ -13,7 +13,7 @@ class CurrentIndexItem extends Component {
   }
 
   render() {
-    const { document, removeDocument, onClick } = this.props
+    const { document, removeDocument, duplicateDocument, onClick } = this.props
 
     const inputStyle = {
       fontSize: '18px',
@@ -28,9 +28,13 @@ class CurrentIndexItem extends Component {
     return <li className="list-group-item active">
       <div className="row">
         <div style={({marginLeft: '10px'})}>
+          <span onClick={duplicateDocument.bind(null, document)}
+            className="fa fa-files-o duplicate_document"
+            style={({position: 'absolute', top: '35px', left: '10px', width: '15px', float: 'left'})}></span>
+
           <span onClick={removeDocument.bind(null, document)}
             className="fa fa-trash-o"
-            style={({margin: '10px 5px 10px 5px', width: '15px', float: 'left'})}></span>
+            style={({margin: '5px 5px 10px 5px', width: '15px', float: 'left'})}></span>
 
           <div style={({marginLeft: '25px'})}>
             <AutosizeTextArea value={document.name} onChange={this.handleChange.bind(this)} style={inputStyle} />
@@ -54,5 +58,6 @@ CurrentIndexItem.propTypes = {
 
 export default connect(s => s, {
   updateDocumentName,
+  duplicateDocument,
   removeDocument
 })(CurrentIndexItem)

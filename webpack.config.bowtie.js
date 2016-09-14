@@ -6,8 +6,8 @@ module.exports = {
     './index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '../../bowtie-lite/app/assets/javascripts/collection-editor.js',
+    path: path.join('../bowtie-lite/public/static'),
+    filename: '../../app/assets/javascripts/collection-editor.js',
     publicPath: '/static/'
   },
   plugins: [
