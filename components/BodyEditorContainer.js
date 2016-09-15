@@ -37,7 +37,7 @@ class BodyEditorContainer extends Component {
 
 
           { configurationEditorModeAvailable ?
-            <button onClick={this.props.activateConfigurationEditor} className="viewButton" style={{width: "auto"}}>
+            <button onClick={this.props.activateConfigurationEditor} className="viewButton2" style={{width: "auto"}}>
               <span style={{cursor: 'pointer', fontSize: '16px', float: 'left'}} className="fa fa-list" />
               <div className="viewButtonText" style={{float: 'left', marginLeft: '6px'}}>
               Fields

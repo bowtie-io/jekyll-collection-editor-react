@@ -7,7 +7,7 @@
     border: none;
     box-shadow: none;
     .panel-body{
-      padding:10px;
+      padding: 0 10px 10px;
       .pull-left > button.btn {width:35px; height:35px; margin:0px 8px 5px !important;}
       } //theme
     }
@@ -59,22 +59,37 @@
       }
     .body-editor-header {
       height: auto;
-      padding: 20px 15px 0;
-      margin: -20px -26px 10px;
+      padding: 50px 15px 0;
+      //margin: -20px -26px 10px;
       background: #fff;
       position: relative;
       //position: fixed;
-      width: calc(85% - 14px);
-      z-index: 4;
+      //width: calc(85% - 14px);
+      z-index: 99;
       border-radius: 0px;
-      border-bottom: none;
+      border-bottom: 1px solid #f9f9f9;
       //border-bottom: 1px solid #dee3ea;
       h2 {font-size: 1.75em; margin: 0;width:80%;float: left;padding-top:5px;}
     .viewButton {
       padding: 8px 12px;
-      border-radius: 4px;
-      background: #f2f2f2;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+      background: #f9f9f9;
       width: auto;
+    }
+    .viewButton2 {
+      padding: 8px 12px;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+      border-left: 1px solid #f9f9f9;
+      border-top: 1px solid #f9f9f9;
+      border-right: 1px solid #f9f9f9;
+      border-bottom: 1px solid #fff;
+      position: relative;
+      z-index: 99;
+      background: #fff;
+      width: auto;
+      margin-bottom: -1px;
     }
     .viewButtonText {
       float: left;
@@ -122,7 +137,7 @@
         background: #f9f9f9;
         padding: 12px;
         border-radius: 3px;
-        z-index: 99;
+        z-index: 6;
         .file-upload-configuration {
           img.img-preview {height: 120px !important;
           width: auto !important;}
@@ -305,11 +320,11 @@
 @media (max-width: 1020px) {
   .collectioneditor .header {
     width:100%;
+    background: transparent;
+    position: relative;
+    z-index: 11;
+    margin-top: 10px;
     .panel-body {padding-left:160px;}
-  }
-  .configuration-editor { 
-    position: absolute;
-    left: 10px !important;
   }
   .documentindex {
     position:absolute;
@@ -329,9 +344,8 @@
   }
   .editormanager {margin-left:0 !important;}
   .body-editor-header {
-    margin-top:25px !important;
+    margin-right: 0 !important;
     h2 {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding-top: 8px  !important; padding-bottom: 2px !important;}
-    width: calc(100% - 14px) !important;
     }
     .content-mode, .collection-mode {
       //padding-top:120px !important;
@@ -381,10 +395,6 @@
 
 @media (max-width: 767px) {
   .content {
-    .configuration-editor { 
-      position: absolute;
-      left: 10px !important;
-    }
   .content-mode, .collection-mode, .md-editor.no-preview {
     overflow-x:hidden;
     -webkit-overflow-scrolling: touch;
