@@ -120,9 +120,6 @@
         }
 
       .configuration-editor {
-        position: absolute;
-        left: 0;
-        background: #f9f9f9;
         z-index: 99;
         .file-upload-configuration {
           img.img-preview {height: 120px !important;
@@ -210,17 +207,17 @@
   animation-fill-mode: both;
 }
 
-.animated.slideInRight {
+.animated.slideInUp {
   -webkit-animation-duration: .25s;
   animation-duration: .25s;
   -webkit-animation-fill-mode: both;
   transition: ease-in-out;
 }
 
-@-webkit-keyframes slideInRight {
+@-webkit-keyframes slideInUp {
   from {
-    -webkit-transform: translate3d(40%, 0, 0);
-    transform: translate3d(40%, 0, 0);
+    -webkit-transform: translate3d(0, 40% 0);
+    transform: translate3d(0, 40%, 0);
     visibility: visible;
   }
 
@@ -230,10 +227,10 @@
   }
 }
 
-@keyframes slideInRight {
+@keyframes slideInUp {
   from {
-    -webkit-transform: translate3d(40%, 0, 0);
-    transform: translate3d(40%, 0, 0);
+    -webkit-transform: translate3d(0, 40%, 0);
+    transform: translate3d(0, 40%, 0);
     visibility: visible;
   }
 
@@ -243,16 +240,16 @@
   }
 }
 
-.slideInRight {
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight;
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
 }
 
 
-@-webkit-keyframes slideInLeft {
+@-webkit-keyframes slideInDown {
   from {
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
     visibility: visible;
   }
 
@@ -262,10 +259,10 @@
   }
 }
 
-@keyframes slideInLeft {
+@keyframes slideInDown {
   from {
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
     visibility: visible;
   }
 
@@ -275,9 +272,9 @@
   }
 }
 
-.slideInLeft {
-  -webkit-animation-name: slideInLeft;
-  animation-name: slideInLeft;
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
 }
 @media (min-width: 1021px) {
 .index-dropdown.dropdown:hover .dropdown-menu, .index-dropdown.dropdown .dropdown-menu {

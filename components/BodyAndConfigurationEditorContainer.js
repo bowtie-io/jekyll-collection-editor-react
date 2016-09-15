@@ -47,10 +47,12 @@ class BodyAndConfigurationEditorContainer extends Component {
 
 
         </div>
-          <div className="configuration-editor animated slideInLeft col-lg-5 col-sm-5">
+          <div className="row">
+          <div className="configuration-editor animated slideInDown">
             <div className="editor-content">
             <DocumentConfigurationEditor />
             </div>
+          </div>
           </div>
 
         <div className="row">

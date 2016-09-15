@@ -1,7 +1,8 @@
 .configuration-editor {
     border-top: 1px solid #eee;
     position: relative;
-    box-shadow: 4px 3px 6px rgba(0,0,0,.3);
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
     h5.title {margin-bottom: 20px;}
 }
 .configuration-editor:after {
