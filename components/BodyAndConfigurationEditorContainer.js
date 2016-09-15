@@ -45,19 +45,16 @@ class BodyAndConfigurationEditorContainer extends Component {
           </button>
           </div>
 
-          <div className="row titles"></div>
 
         </div>
-        <div className="row animated slideInLeft collection-mode">
-          <div className="configuration-editor col-lg-5 col-sm-5">
+          <div className="configuration-editor animated slideInLeft col-lg-5 col-sm-5">
             <div className="editor-content">
             <DocumentConfigurationEditor />
             </div>
           </div>
 
-          <div className="md-editor no-preview col-lg-7 col-sm-7">
+        <div className="row">
             <SummernoteEditor {...this.props} />
-          </div>
         </div>
       </div>
     )

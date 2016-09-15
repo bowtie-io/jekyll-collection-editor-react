@@ -123,7 +123,8 @@ class SummernoteEditor extends Component {
         <ReactSummernote
         value={this.props.body}
         options={{
-height: 750,
+maxHeight: 600,
+height: 600,
 dialogsInBody: true,
 toolbar: [
 ["style", ["style"]],

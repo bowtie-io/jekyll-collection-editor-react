@@ -47,7 +47,7 @@ class BodyEditorContainer extends Component {
             
         </div>
 
-        <div className="row animated slideInRight content-mode">
+        <div className="row content-mode">
             <div className="editor-content">
             <SummernoteEditor {...this.props} />
             </div>
