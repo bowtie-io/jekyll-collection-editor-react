@@ -37,10 +37,10 @@ class BodyAndConfigurationEditorContainer extends Component {
 
 
           <button className="viewButton" onClick={this.props.activateBodyEditor}>
-            <span style={{marginTop: '-2px', float: 'left', cursor: 'pointer', fontSize: '20px'}}
-              className="fa fa-close" />
+            <span style={{fontSize: '16px', float: 'left', cursor: 'pointer'}}
+              className="fa fa-caret-up" />
               <div className="viewButtonText">
-              Hide Fields
+              Fields
               </div>
           </button>
           </div>

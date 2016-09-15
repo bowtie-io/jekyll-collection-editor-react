@@ -6,7 +6,7 @@ import { loadFile, removeFile, replaceFile } from '../../actions'
 
 const ImagePreview = ({ file }) => (
   <div>
-    <div style={({maxHeight: '200px', overflow: 'auto', background: '#f7f7f7'})}>
+    <div style={({maxHeight: '200px', overflow: 'auto', background: '#f5f5f5'})}>
       <img className="img-preview" src={file.previewURL} />
     </div>
 

@@ -38,13 +38,13 @@ class BodyEditorContainer extends Component {
 
           { configurationEditorModeAvailable ?
             <button onClick={this.props.activateConfigurationEditor} className="viewButton2" style={{width: "auto"}}>
-              <span style={{cursor: 'pointer', fontSize: '16px', float: 'left'}} className="fa fa-list" />
+              <span style={{cursor: 'pointer', fontSize: '16px', float: 'left'}} className="fa fa-caret-down" />
               <div className="viewButtonText" style={{float: 'left', marginLeft: '6px'}}>
               Fields
               </div>
             </button> : null }
             </div>
-            
+
         </div>
 
         <div className="row content-mode animated slideInUp">

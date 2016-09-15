@@ -19,12 +19,17 @@
     .note-editor.note-frame .note-editing-area {
       height: 150%;
     }
+    .note-resizebar {
+      display:none;
+    }
 
   .header {
     position: fixed;
     height: 50px;
     width: 25%;
     z-index: 4;
+    background: transparent;
+    margin-top: 10px;
     }
   .content {
     .header.panel, .content.main {
@@ -60,36 +65,38 @@
     .body-editor-header {
       height: auto;
       padding: 50px 15px 0;
-      //margin: -20px -26px 10px;
       background: #fff;
       position: relative;
-      //position: fixed;
-      //width: calc(85% - 14px);
       z-index: 99;
       border-radius: 0px;
-      border-bottom: 1px solid #f9f9f9;
-      //border-bottom: 1px solid #dee3ea;
+      border-bottom: 1px solid #efefef;
       h2 {font-size: 1.75em; margin: 0;width:80%;float: left;padding-top:5px;}
     .viewButton {
-      padding: 8px 12px;
+      padding: 10px 12px 12px;
       border-top-right-radius: 4px;
       border-top-left-radius: 4px;
+      border-left: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 4px solid #f9f9f9;
       background: #f9f9f9;
+      margin-bottom:-2px;
       width: auto;
     }
     .viewButton2 {
-      padding: 8px 12px;
+      padding: 10px 12px 12px;
+      margin-bottom:-1px;
       border-top-right-radius: 4px;
       border-top-left-radius: 4px;
-      border-left: 1px solid #f9f9f9;
-      border-top: 1px solid #f9f9f9;
-      border-right: 1px solid #f9f9f9;
-      border-bottom: 1px solid #fff;
+      border-left: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 4px solid #fff;
       position: relative;
       z-index: 99;
       background: #fff;
       width: auto;
-      margin-bottom: -1px;
+      margin-bottom: -2px;
     }
     .viewButtonText {
       float: left;
