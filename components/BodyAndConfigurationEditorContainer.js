@@ -40,7 +40,7 @@ class BodyAndConfigurationEditorContainer extends Component {
             <span style={{marginTop: '-2px', float: 'left', cursor: 'pointer', fontSize: '20px'}}
               className="fa fa-close" />
               <div className="viewButtonText">
-              Editor
+              Hide Fields
               </div>
           </button>
           </div>
