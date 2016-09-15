@@ -37,8 +37,8 @@ class BodyAndConfigurationEditorContainer extends Component {
 
 
           <button className="viewButton" onClick={this.props.activateBodyEditor}>
-            <span style={{float: 'left', cursor: 'pointer', fontSize: '20px'}}
-              className="fa fa-edit" />
+            <span style={{marginTop: '-2px', float: 'left', cursor: 'pointer', fontSize: '20px'}}
+              className="fa fa-close" />
               <div className="viewButtonText">
               Editor
               </div>

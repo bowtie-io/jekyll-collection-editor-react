@@ -79,7 +79,6 @@
     .viewButtonText {
       float: left;
       margin-left: 6px;
-      margin-top: -1px;
       font-size:.9em;
     }
 
@@ -120,6 +119,9 @@
         }
 
       .configuration-editor {
+        background: #f9f9f9;
+        padding: 12px;
+        border-radius: 3px;
         z-index: 99;
         .file-upload-configuration {
           img.img-preview {height: 120px !important;
