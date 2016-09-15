@@ -28,16 +28,14 @@ class CurrentIndexItem extends Component {
     return <li className="list-group-item active">
       <div className="row">
         <div style={({marginLeft: '10px'})}>
-          <span onClick={duplicateDocument.bind(null, document)}
-            className="fa fa-files-o duplicate_document"
-            style={({position: 'absolute', top: '35px', left: '10px', width: '15px', float: 'left'})}></span>
-
-          <span onClick={removeDocument.bind(null, document)}
-            className="fa fa-trash-o"
-            style={({margin: '5px 5px 10px 5px', width: '15px', float: 'left'})}></span>
-
-          <div style={({marginLeft: '25px'})}>
+          <div style={({marginLeft: '10px'})}>
             <AutosizeTextArea value={document.name} onChange={this.handleChange.bind(this)} style={inputStyle} />
+
+          <span onClick={removeDocument.bind(null, document)} className="fa fa-files-o duplicate_document"
+            style={({margin: '2px 5px 10px 5px', width: '15px', float: 'right'})}></span>
+
+          <span onClick={duplicateDocument.bind(null, document)} className="fa fa-trash-o"
+            style={({margin: '2px 5px 10px 5px', width: '15px', float: 'right'})}></span>
 
             <div>
               {document.isNew ? <span className="label label-info">New</span> : null}
