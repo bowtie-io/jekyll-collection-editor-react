@@ -11,6 +11,15 @@
       .pull-left > button.btn {width:35px; height:35px; margin:0px 8px 5px !important;}
       } //theme
     }
+    .note-editor.note-frame {
+      border: none;
+
+    }
+    .note-toolbar.panel-heading {      background-color: #fff;}
+    .note-editor.note-frame .note-editing-area {
+      height: 150%;
+    }
+
   .header {
     position: fixed;
     height: 50px;
@@ -50,24 +59,28 @@
       }
     .body-editor-header {
       height: auto;
-      padding: 20px 15px 0px;
+      padding: 20px 15px 0;
       margin: -20px -26px 10px;
       background: #fff;
-      position: fixed;
+      position: relative;
+      //position: fixed;
       width: calc(85% - 14px);
       z-index: 4;
       border-radius: 0px;
-      border-bottom: 1px solid #dee3ea;
+      border-bottom: none;
+      //border-bottom: 1px solid #dee3ea;
       h2 {font-size: 1.75em; margin: 0;width:80%;float: left;padding-top:5px;}
     .viewButton {
-      padding: 12px;
+      padding: 8px 12px;
       border-radius: 4px;
-      background: #ccc;
+      background: #f2f2f2;
       width: auto;
     }
     .viewButtonText {
       float: left;
       margin-left: 6px;
+      margin-top: -1px;
+      font-size:.9em;
     }
 
       .btn-group {}
@@ -86,7 +99,7 @@
       }
     }
       .content-mode, .collection-mode {
-        padding-top: 70px;
+        padding-top: 5px;
       }
       .content-mode, .collection-mode, .md-editor.no-preview {
         height: 100%;
@@ -313,11 +326,11 @@
     width: calc(100% - 14px) !important;
     }
     .content-mode, .collection-mode {
-      padding-top:120px !important;
+      //padding-top:120px !important;
     }
-    .md-preview {
-      top: 120px !important;
-    }
+    // .md-preview {
+    //   top: 120px !important;
+    // }
     .titles{
       h5 span.fields-title, h5 span.preview-title {display: none;}
     }
@@ -385,7 +398,7 @@
       h2 {font-size: 1.5em !important;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;width:60% !important;}
       .btn-group {
         float:right;
-        button {width:40px !important; height:40px !important; margin-left:10px;}
+        button {width:40px; height:40px !important; margin-left:10px;}
         }
       }
   }

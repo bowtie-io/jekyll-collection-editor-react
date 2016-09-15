@@ -5,7 +5,6 @@ import DocumentConfigurationEditor from './DocumentConfigurationEditor.js'
 import SummernoteEditor from './SummernoteEditor.js'
 import DocumentBodyEditor from './DocumentBodyEditor.js'
 import { activateBodyEditor, resetDocument } from '../actions'
-import EditorContainerFooter from './EditorContainerFooter.js'
 
 
 class BodyAndConfigurationEditorContainer extends Component {
@@ -41,7 +40,7 @@ class BodyAndConfigurationEditorContainer extends Component {
             <span style={{float: 'left', cursor: 'pointer', fontSize: '20px'}}
               className="fa fa-edit" />
               <div className="viewButtonText">
-              Editor View
+              Editor
               </div>
           </button>
           </div>
@@ -57,9 +56,7 @@ class BodyAndConfigurationEditorContainer extends Component {
           </div>
 
           <div className="md-editor no-preview col-lg-7 col-sm-7">
-            <div className="editor-content">
             <SummernoteEditor {...this.props} />
-            </div>
           </div>
         </div>
       </div>

@@ -37,24 +37,20 @@ class BodyEditorContainer extends Component {
 
 
           { configurationEditorModeAvailable ?
-            <button onClick={this.props.activateConfigurationEditor} className="viewButton" style={{padding: '12px', borderRadius: '4px', background: '#ccc', width: "auto"}}>
-              <span style={{cursor: 'pointer', fontSize: '20px', float: 'left'}} className="fa fa-list" />
+            <button onClick={this.props.activateConfigurationEditor} className="viewButton" style={{width: "auto"}}>
+              <span style={{cursor: 'pointer', fontSize: '16px', float: 'left'}} className="fa fa-list" />
               <div className="viewButtonText" style={{float: 'left', marginLeft: '6px'}}>
-              Fields View
+              Fields
               </div>
             </button> : null }
             </div>
-
-            <div className="row titles"></div>
-
+            
         </div>
 
         <div className="row animated slideInRight content-mode">
-          <div className="md-editor has-preview col-sm-8">
             <div className="editor-content">
             <SummernoteEditor {...this.props} />
             </div>
-          </div>
 
         </div>
       </div>

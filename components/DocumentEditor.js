@@ -6,7 +6,6 @@ import DocumentConfigurationEditor from './DocumentConfigurationEditor.js'
 import DocumentBodyEditor from './DocumentBodyEditor.js'
 import BodyAndConfigurationEditorContainer from './BodyAndConfigurationEditorContainer.js'
 import BodyEditorContainer from './BodyEditorContainer.js'
-import EditorContainerFooter from './EditorContainerFooter.js'
 
 class DocumentEditor extends Component {
   constructor(props) {
@@ -27,7 +26,6 @@ class DocumentEditor extends Component {
   render() {
     return <div>
       {this.renderEditorContainer()}
-      <EditorContainerFooter />
     </div>
   }
 }
