@@ -43,7 +43,7 @@
         left: 0px;
         width: 15%;
         padding: 5px 15px 0;
-        z-index: 4;
+        z-index: 90 !important;
         ul.dropdown-menu {
           overflow-y:scroll;
           overflow-x: hidden;
@@ -67,7 +67,7 @@
       padding: 50px 15px 0;
       background: #fff;
       position: relative;
-      z-index: 99;
+      z-index: 89;
       border-radius: 0px;
       border-bottom: 1px solid #efefef;
       h2 {font-size: 1.75em; margin: 0;width:80%;float: left;padding-top:5px;}
