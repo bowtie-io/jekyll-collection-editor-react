@@ -73,30 +73,22 @@
       h2 {font-size: 1.75em; margin: 0;width:80%;float: left;padding-top:5px;}
     .viewButton {
       padding: 10px 12px 12px;
-      border-top-right-radius: 4px;
-      border-top-left-radius: 4px;
-      border-left: 1px solid #ddd;
-      border-top: 1px solid #ddd;
-      border-right: 1px solid #ddd;
-      border-bottom: 4px solid #f9f9f9;
+      border-radius: 4px;
+      border: 1px solid #ddd;
       background: #f9f9f9;
-      margin-bottom:-2px;
+      margin: 10px;
       width: auto;
     }
     .viewButton2 {
       padding: 10px 12px 12px;
       margin-bottom:-1px;
-      border-top-right-radius: 4px;
-      border-top-left-radius: 4px;
-      border-left: 1px solid #ddd;
-      border-top: 1px solid #ddd;
-      border-right: 1px solid #ddd;
-      border-bottom: 4px solid #fff;
+      border-radius: 4px;
+      border: 1px solid #ddd;
       position: relative;
       z-index: 99;
       background: #fff;
       width: auto;
-      margin-bottom: -2px;
+      margin: 10px;
     }
     .viewButtonText {
       float: left;
