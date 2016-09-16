@@ -28,11 +28,6 @@ class BodyAndConfigurationEditorContainer extends Component {
           {title}</h2> : null }
 
           <div className="btn-group">
-          { currentDocumentIsModified ?
-            <button onClick={this.props.resetDocument}>
-              <span style={{cursor: 'pointer', fontSize: '20px'}}
-                className="fa fa-undo" />
-            </button> : null }
 
 
 

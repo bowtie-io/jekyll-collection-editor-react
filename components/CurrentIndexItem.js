@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { updateDocumentName, removeDocument, duplicateDocument } from '../actions'
+import { resetDocument, updateDocumentName, removeDocument, duplicateDocument } from '../actions'
 import AutosizeTextArea from 'react-autosize-textarea'
 
 class CurrentIndexItem extends Component {
@@ -13,7 +13,7 @@ class CurrentIndexItem extends Component {
   }
 
   render() {
-    const { document, removeDocument, duplicateDocument, onClick } = this.props
+    const { document, resetDocument, removeDocument, duplicateDocument, onClick } = this.props
 
     const inputStyle = {
       fontSize: '18px',
@@ -36,6 +36,10 @@ class CurrentIndexItem extends Component {
 
           <span onClick={duplicateDocument.bind(null, document)} className="fa fa-trash-o"
             style={({margin: '2px 5px 10px 5px', width: '15px', float: 'right'})}></span>
+          { document.isModified ?
+              <span onClick={this.props.resetDocument} style={{float: 'right', cursor: 'pointer', fontSize: '12px', width: '13px', marginTop: '3px'}}
+                className="fa fa-undo" />
+            : null }
 
             <div>
               {document.isNew ? <span className="label label-info">New</span> : null}
@@ -57,5 +61,6 @@ CurrentIndexItem.propTypes = {
 export default connect(s => s, {
   updateDocumentName,
   duplicateDocument,
+  resetDocument,
   removeDocument
 })(CurrentIndexItem)
