@@ -1,6 +1,9 @@
 .ql-editor {
   min-height: 500px !important;
 }
+.note-editable { 
+height: 70vh !important;
+}
 .collectioneditor {
   .panel {
     border-radius: 4px;
@@ -317,6 +320,9 @@
 
 
 @media (max-width: 1020px) {
+  .note-editable {
+    height: 60vh !important;
+  }
   .collectioneditor .header {
     width:100%;
     background: transparent;
@@ -393,6 +399,9 @@
 }
 
 @media (max-width: 767px) {
+  .note-editable {
+  height: 58vh !important;
+  }
   .content {
   .content-mode, .collection-mode, .md-editor.no-preview {
     overflow-x:hidden;

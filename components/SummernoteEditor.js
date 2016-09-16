@@ -124,7 +124,7 @@ class SummernoteEditor extends Component {
         value={this.props.body}
         options={{
 disableResizeEditor: true,
-height: 500,
+height: '55vh',
 dialogsInBody: true,
 toolbar: [
 ["style", ["style"]],
