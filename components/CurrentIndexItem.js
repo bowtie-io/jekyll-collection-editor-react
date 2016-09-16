@@ -31,10 +31,10 @@ class CurrentIndexItem extends Component {
           <div style={({marginLeft: '10px'})}>
             <AutosizeTextArea value={document.name} onChange={this.handleChange.bind(this)} style={inputStyle} />
 
-          <span onClick={removeDocument.bind(null, document)} className="fa fa-files-o duplicate_document"
+          <span onClick={removeDocument.bind(null, document)} className="fa fa-trash-o duplicate_document"
             style={({margin: '2px 5px 10px 5px', width: '15px', float: 'right'})}></span>
 
-          <span onClick={duplicateDocument.bind(null, document)} className="fa fa-trash-o"
+          <span onClick={duplicateDocument.bind(null, document)} className="fa fa-files-o"
             style={({margin: '2px 5px 10px 5px', width: '15px', float: 'right'})}></span>
           { document.isModified ?
               <span onClick={this.props.resetDocument} style={{float: 'right', cursor: 'pointer', fontSize: '12px', width: '13px', marginTop: '3px'}}
