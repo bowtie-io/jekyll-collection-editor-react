@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
 const DocumentNotFound = ({ path }) => (
-  <div>
-    Document { path } not found
+  <div style={{paddingTop: "24px;"}}>
+    Searching for documents..
   </div>
 )
 
