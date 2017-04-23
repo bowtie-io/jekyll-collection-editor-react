@@ -1,3 +1,7 @@
+# Code Not Maintained
+
+This work represents a failed attempt to create a usable repository editor for Jekyll collections. It is not maintained and issues will not be addressed.
+
 # Usage
 
 1. `$ brew install node`
